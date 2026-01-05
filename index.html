@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IB Mathematics AA – Course Hub</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+/* Header */
+header {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 24px;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+/* Sidebar */
+.sidebar {
+  width: 270px;
+  background: #1f2937;
+  color: #f3f4f6;
+  padding: 10px 15px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Sidebar title */
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #fbbf24;
+}
+
+/* Section headers */
+.sidebar h3 {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/* Core vs HL Only colors */
+.core {
+  color: #fbbf24; /* yellow */
+}
+.hl-only {
+  color: #f97316; /* orange */
+}
+
+/* Topics */
+.topic {
+  cursor: pointer;
+  padding: 6px 8px;
+  background: #374151;
+  margin-bottom: 4px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Hover */
+.topic:hover {
+  background: #3b82f6;
+  color: #fff;
+}
+
+/* Subtopics */
+.subtopics {
+  display: none;
+  margin-left: 10px;
+}
+
+.topic:hover .subtopics {
+  display: block;
+}
+
+.subtopics div {
+  padding: 4px 6px;
+  font-size: 13px;
+  color: #d1d5db;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.subtopics div:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* Right pane */
+.content {
+  flex: 1;
+  padding: 25px;
+  background: #ffffff;
+  overflow-y: auto;
+  text-align: justify;
+}
+
+.content h1 {
+  margin-top: 0;
+}
+
+.video-thumbnail {
+  margin: 10px 0;
+}
+
+.video-thumbnail iframe {
+  width: 100%;
+  height: 200px;
+}
+</style>
+
+<script>
+function loadURL(title, url, type="link") {
+  const content = document.getElementById("content");
+  if(type === "link") {
+    content.innerHTML = `<h1>${title}</h1>
+      <iframe src="${url}" width="100%" height="600px" style="border:none;"></iframe>`;
+  } else if(type === "youtube") {
+    let html = `<h1>${title}</h1>`;
+    url.forEach(function(video){
+      html += `<div class="video-thumbnail">
+        <p>${video.title}</p>
+        <iframe src="${video.link}" frameborder="0" allowfullscreen></iframe>
+      </div>`;
+    });
+    content.innerHTML = html;
+  }
+}
+</script>
+</head>
+
+<body>
+
+<header>IB Mathematics SL / HL – Learning Portal</header>
+
+<div class="container">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>IB Math AA</h2>
+
+    <h3 class="core">Core (SL/HL) – 30 Hours</h3>
+
+    <!-- Functions -->
+    <div class="topic">Functions
+      <div class="subtopics">
+        <div onclick="loadURL('Functions – Lesson Notes','https://drive.google.com/file/d/1Sn5hbw3bkhWCNw2ymHiSh7mfQGhdavtz/preview')">Lesson Notes</div>
+        <div onclick="loadURL('Functions – Practice Exercise','https://drive.google.com/file/d/1hNEZPXvEjNkEQ56kiD474oRz0CNg_XNB/preview')">Practice Exercise</div>
+        <div onclick="loadURL('Functions – Practice Exercise Worked Solutions','https://drive.google.com/file/d/1Du_weGwRNyFHZxNdIJ-KXRWPL8QgYz3g/preview')">Practice Exercise Worked Solutions</div>
+        <div onclick="loadURL('Functions – Video Links', [{title:'Functions Playlist', link:'https://www.youtube.com/embed/cZNEkqrbtiE?list=PLrVxQwkfAdPT8U6rDRPevRJjeNmtW6WQQ'}], 'youtube')">Video Links</div>
+        <div onclick="loadURL('Functions – Exam Style Questions','https://revisiontown2024.pages.dev/#app/ib-math/analysis-and-approaches-sl/questionbank/functions/properties-of-functions')">Exam Style Questions</div>
+      </div>
+    </div>
+
+    <!-- Quadratics -->
+    <div class="topic">Quadratics
+      <div class="subtopics">
+        <div onclick="loadURL('Quadratics – Lesson Notes','https://drive.google.com/file/d/1UiIp8TlwUtQaD4sD-7cFCjbaQ3vas5R8/preview')">Lesson Notes</div>
+        <div onclick="loadURL('Quadratics – Practice Exercise','https://drive.google.com/file/d/1vsK_HvXa_BsljjXy8Pq5zbx4OVY_scc7/preview')">Practice Exercise</div>
+        <div onclick="loadURL('Quadratics – Practice Exercise Worked Solutions','https://drive.google.com/file/d/15ufo7m0Qh4ip1Zh3L_qj6O3cX-UwH0-F/preview')">Practice Exercise Worked Solutions</div>
+        <div onclick="loadURL('Quadratics – Video Links', [
+          {title:'Factorising', link:'https://www.youtube.com/embed/wwCrL1X0gl0'},
+          {title:'Complete the Square', link:'https://www.youtube.com/embed/QtkPzG_Sp9s'},
+          {title:'Discriminant of a Quadratic', link:'https://www.youtube.com/embed/p4o9TJQEQXU'}
+        ], 'youtube')">Video Links</div>
+        <div onclick="loadURL('Quadratics – Exam Style Questions','https://revisiontown2024.pages.dev/#app/ib-math/analysis-and-approaches-sl/questionbank/functions/quadratics')">Exam Style Questions</div>
+      </div>
+    </div>
+
+    <!-- Sequences & Series -->
+    <div class="topic">Sequences & Series
+      <div class="subtopics">
+        <div onclick="loadURL('Sequences – Lesson Notes','https://drive.google.com/file/d/1mGiBVTC01XKZflFDnwhaJLxgYYXcaEBW/preview')">Lesson Notes</div>
+        <div onclick="loadURL('Sequences – Practice Exercise','https://drive.google.com/file/d/1TRQokMogETn0-iUOvXtm4VM7mL0BsYHl/preview')">Practice Exercise</div>
+        <div onclick="loadURL('Sequences – Practice Exercise Worked Solutions','https://drive.google.com/file/d/1j6KtTgsWZu_ZfTdlLRxTPUQJp77kEiXr/preview')">Practice Exercise Worked Solutions</div>
+        <div onclick="loadURL('Sequences – Video Links', [
+          {title:'Arithmetic Sequence & Series', link:'https://www.youtube.com/embed/XO8RiMggsmY'},
+          {title:'Geometric Sequence & Series', link:'https://www.youtube.com/embed/LV2Aah2_Qg8'},
+          {title:'Sigma Notation', link:'https://www.youtube.com/embed/xFUP_S1H3jo'}
+        ], 'youtube')">Video Links</div>
+        <div onclick="loadURL('Sequences – Exam Style Questions','https://revisiontown2024.pages.dev/#app/ib-math/analysis-and-approaches-sl/questionbank/number-and-algebra/sequences-and-series')">Exam Style Questions</div>
+      </div>
+    </div>
+
+    <!-- Geometry & Trigonometry -->
+    <div class="topic">Geometry & Trigonometry
+      <div class="subtopics">
+        <div onclick="loadURL('Geometry & Trigonometry – Lesson Notes','https://drive.google.com/file/d/16UJu3v2QHGa3xm4NOsGxExIk5tFaMR57/preview')">Lesson Notes</div>
+        <div onclick="loadURL('Geometry & Trigonometry – Practice Exercise','https://drive.google.com/file/d/1fIY-7pyIBaC842lRCsrsgVNQpnF9IAdV/preview')">Practice Exercise</div>
+        <div onclick="loadURL('Geometry & Trigonometry – Practice Exercise Worked Solutions','https://drive.google.com/file/d/1jES4lAq8D161zXs05m-cfcdX0dNh8roZ/preview')">Practice Exercise Worked Solutions</div>
+        <div onclick="loadURL('Geometry & Trigonometry – Video Links', [
+          {title:'Measurements', link:'https://www.youtube.com/embed/1X9D3DYxaco'},
+          {title:'Arc Length & Radian 1', link:'https://www.youtube.com/embed/okxBbgeadUM'},
+          {title:'Arc Length & Radian 2', link:'https://www.youtube.com/embed/7KqysheU_SM'},
+          {title:'Unit Circle', link:'https://www.youtube.com/embed/tDwqbYAxp3Y'},
+          {title:'Trigonometry Identities', link:'https://www.youtube.com/embed/np_bW5XnQjw'},
+          {title:'Trigonometric Graphs', link:'https://www.youtube.com/embed/OTzp4evSTQs'},
+          {title:'Right-Angled Triangle', link:'https://www.youtube.com/embed/nbaY6LZi8UI'},
+          {title:'Non-Right-Angled Trigonometry', link:'https://www.youtube.com/embed/hmTIs9Lhmdk'},
+          {title:'Solving Trigonometric Functions', link:'https://www.youtube.com/embed/k2WrF3VQiJE'}
+        ], 'youtube')">Video Links</div>
+        <div onclick="loadURL('Geometry & Trigonometry – Exam Style Questions','https://revisiontown2024.pages.dev/#app/ib-math/analysis-and-approaches-sl/questionbank/geometry-and-trigonometry/all')">Exam Style Questions</div>
+      </div>
+    </div>
+
+    <!-- Introduction to Differential Calculus -->
+    <div class="topic">Introduction to Differential Calculus
+      <div class="subtopics">
+        <div onclick="loadURL('Differential Calculus – Lesson Notes','https://drive.google.com/file/d/1uriASogdigmhyDGGTbfDsV2u4lz6D4Wl/preview')">Lesson Notes</div>
+        <div onclick="loadURL('Differential Calculus – Practice Exercise','https://drive.google.com/file/d/14lzQOZr407CeWrM2WN7pKHPLi7MlkS_t/preview')">Practice Exercise</div>
+        <div onclick="loadURL('Differential Calculus – Practice Exercise Worked Solutions','https://drive.google.com/file/d/182UkjVgBBhGtimv35xYy_92Mnft2nZ1N/preview')">Practice Exercise Worked Solutions</div>
+        <div onclick="loadURL('Differential Calculus – Video Links', [{title:'Differential Calculus Playlist', link:'https://www.youtube.com/embed/F7j6SAy2CHA'}], 'youtube')">Video Links</div>
+        <div onclick="loadURL('Differential Calculus – Exam Style Questions','https://revisiontown2024.pages.dev/#app/ib-math/analysis-and-approaches-sl/questionbank/calculus/differential-calculus')">Exam Style Questions</div>
+      </div>
+    </div>
+
+    <h3 class="hl-only">HL Only – 20 Hours</h3>
+
+    <!-- Exponential & Logarithmic -->
+    <div class="topic">Exponential & Logarithmic Functions
+      <div class="subtopics">
+        <div onclick="loadURL('Exponential & Logarithmic – Lesson Notes','https://drive.google.com/file/d/1TQSu-XBLhom-mBmrGshACWZIkwNGOEtp/preview')">Lesson Notes</div>
+        <div onclick="loadURL('Exponential & Logarithmic – Practice Exercise','https://drive.google.com/file/d/1KdqBvSxd-UDTDx6I43vRcGu55RjOMMgm/preview')">Practice Exercise</div>
+        <div onclick="loadURL('Exponential & Logarithmic – Practice Exercise Worked Solutions','https://drive.google.com/file/d/1vuIXb3xHrCgGdU4-9tFcy5j3kJ9xmVso/preview')">Practice Exercise Worked Solutions</div>
+        <div onclick="loadURL('Exponential & Logarithmic – Video Links', [
+          {title:'Exponentials', link:'https://www.youtube.com/embed/z5MO5Uo44Qw'},
+          {title:'Logarithms', link:'https://www.youtube.com/embed/vzsiXAzqDcw'}
+        ], 'youtube')">Video Links</div>
+        <div onclick="loadURL('Exponential & Logarithmic – Exam Style Questions','https://revisiontown2024.pages.dev/#app/ib-math/analysis-and-approaches-sl/questionbank/number-and-algebra/exponents-and-logarithms')">Exam Style Questions</div>
+      </div>
+    </div>
+
+    <!-- The Binomial Theorem -->
+    <div class="topic">The Binomial Theorem
+      <div class="subtopics">
+        <div onclick="loadURL('Binomial Theorem – Video Links', [{title:'Binomial Theorem', link:'https://www.youtube.com/embed/CxJATiDgpf0'}], 'youtube')">Video Links</div>
+        <div onclick="loadURL('Binomial Theorem – Exam Style Questions','https://revisiontown2024.pages.dev/#app/ib-math/analysis-and-approaches-sl/questionbank/number-and-algebra/binomial-theorem')">Exam Style Questions</div>
+      </div>
+    </div>
+
+    <!-- Applications of Differentiation & Integration -->
+    <div class="topic">Applications of Differentiation & Integration
+      <div class="subtopics">
+        <div onclick="loadURL('Applications – Lesson Notes','https://drive.google.com/file/d/18uAU3B7IAUqGIo-JoAy8fMPMQlwyVxcP/preview')">Lesson Notes</div>
+        <div onclick="loadURL('Applications – Practice Exercise','https://drive.google.com/file/d/1PMSBxuI9SoFB-CWGfxXBtCVk4Ttr27ro/preview')">Practice Exercise</div>
+        <div onclick="loadURL('Applications – Practice Exercise Worked Solutions','https://drive.google.com/file/d/1gkW7Yc_BGa5hpbStdLU5--0qNRr5FJbE/preview')">Practice Exercise Worked Solutions</div>
+        <div onclick="loadURL('Applications – Video Links', [
+          {title:'Equation of a Tangent', link:'https://www.youtube.com/embed/3FU-sMJDrX0'},
+          {title:'Implicit Differentiation', link:'https://www.youtube.com/embed/-y7xnBJ6Sd4'},
+          {title:'Optimization', link:'https://www.youtube.com/embed/9fy_UxA3VH8'},
+          {title:'Related Rates', link:'https://www.youtube.com/embed/5SkVhG5aoqU'},
+          {title:'Integration Rules', link:'https://www.youtube.com/embed/i3WS4Z-P0ow'}
+        ], 'youtube')">Video Links</div>
+        <div onclick="loadURL('Applications – Exam Style Questions','https://revisiontown2024.pages.dev/#app/ib-math/analysis-and-approaches-sl/questionbank/calculus/integral-calculus')">Exam Style Questions</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Right pane -->
+  <div class="content" id="content">
+    <h1>Course Structure and Content</h1>
+    <p>
+      IB Mathematics students can select either <strong>Analysis and Approaches (AA)</strong> 
+      or <strong>Applications and Interpretation (AI)</strong>, at Standard or Higher Level. 
+      AA courses adopt a more analytical approach, focusing on mathematical reasoning, rigorous argument, 
+      and proof, whereas AI courses emphasize contextual understanding and applying mathematics to real-life situations.
+    </p>
+    <p>
+      The courses are arranged into five broad topics: Number & Algebra; Functions; Geometry & Trigonometry; 
+      Statistics & Probability; and Calculus. Higher Level students study all Standard Level content 
+      in greater depth and explore additional HL-only topics, ensuring a more challenging and comprehensive understanding of mathematics.
+    </p>
+    <p>
+      At the end of the program, all SL and HL students sit the IB Mathematics examinations, with HL students 
+      additionally completing Paper 3, an extended problem-solving paper. Every student also completes an 
+      internal assessment (exploration), offering an opportunity to apply mathematics to a personally chosen topic.
+    </p>
+    <p>
+      Students are encouraged to practice the topics listed in this portal, reviewing lesson notes, attempting practice exercises, 
+      checking worked solutions, and watching the tutorial videos. This preparation ensures a solid foundation for the IB Mathematics course.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
